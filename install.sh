@@ -7,7 +7,7 @@ REPO="$(cd "$(dirname "$0")" && pwd)"
 mkdir -p "$HOME/.config"
 
 # shared
-ln -sf "$REPO/shared/wezterm.lua" "$HOME/.wezterm.lua"
+ln -sf "$REPO/shared/.wezterm.lua" "$HOME/.wezterm.lua"
 # ln -sf "$REPO/shared/nvim" "$HOME/.config/nvim"
 
 # linux-only
