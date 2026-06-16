@@ -1,21 +1,33 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 local act = wezterm.action
--- This will hold the configuration.
 local config = wezterm.config_builder()
+local launch_menu = {}
+
+if wezterm.target_triple:find("windows") then
+	config.default_prog = { "powershell.exe", "-NoLogo" }
+	table.insert(launch_menu, {
+		label = "PowerShell",
+		args = { "powershell.exe", "-NoLogo" },
+	})
+	table.insert(launch_menu, {
+		label = "CMD",
+		args = { "cmd.exe" },
+	})
+	config.launch_menu = launch_menu
+end
 
 ----- Appearance ----------------------------------------
 -- This is where you actually apply your config choices.
 config.font = wezterm.font("IosevkaTermSlab NFM")
-config.font_size = 16.0
+config.font_size = 12.0
 
 config.window_decorations = "RESIZE" -- shows just enough so it still can be resized
 -- config.window_background_opacity = 0.99
 config.window_padding = {
-	left = "5pt",
-	right = "5pt",
-	top = "5pt",
-	bottom = "5pt",
+	left = "3pt",
+	right = "3pt",
+	top = "3pt",
+	bottom = "3pt",
 }
 local border_color = "#333333"
 config.window_frame = {
