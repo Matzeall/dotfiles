@@ -31,10 +31,10 @@ config.window_padding = {
 }
 local border_color = "#333333"
 config.window_frame = {
-	border_left_width = "0.2cell",
-	border_right_width = "0.2cell",
-	border_bottom_height = "0.10cell",
-	border_top_height = "0.10cell",
+	border_left_width = "1pt",
+	border_right_width = "1pt",
+	border_bottom_height = "0pt",
+	border_top_height = "1pt",
 	border_left_color = border_color,
 	border_right_color = border_color,
 	border_bottom_color = border_color,
