@@ -87,7 +87,13 @@ config.colors = {
 ----- Keymaps -------------------------------------------
 config.use_dead_keys = false -- i don't notice the effect, but it sounds important
 config.leader = { key = "Space", mods = "SHIFT" }
-config.keys = {}
-
+config.keys = {
+	{ key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
+	-- scrolling
+	{ key = "u", mods = "ALT", action = act.ScrollByLine(-1) },
+	{ key = "d", mods = "ALT", action = act.ScrollByLine(1) },
+	{ key = "u", mods = "ALT|SHIFT", action = act.ScrollByLine(-5) },
+	{ key = "d", mods = "ALT|SHIFT", action = act.ScrollByLine(5) },
+}
 -- Finally, return the configuration to wezterm:
 return config
