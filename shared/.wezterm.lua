@@ -18,8 +18,8 @@ end
 
 ----- Appearance ----------------------------------------
 -- This is where you actually apply your config choices.
-config.font = wezterm.font("IosevkaTermSlab NFM")
-config.font_size = 12.0
+config.font = wezterm.font("Iosevka Term Slab")
+config.font_size = 14.0
 
 config.window_decorations = "RESIZE" -- shows just enough so it still can be resized
 -- config.window_background_opacity = 0.99
