@@ -16,7 +16,7 @@ if wezterm.target_triple:find("windows") then
 	config.launch_menu = launch_menu
 end
 
-config.enable_wayland = false -- wayland support is flaky currently (e.g. on ubuntu 26.04) -> XWayland (test in the future again though)
+config.enable_wayland = true -- wayland support is flaky currently (e.g. on ubuntu 26.04) -> XWayland (test in the future again though)
 
 ----- Appearance ----------------------------------------
 -- This is where you actually apply your config choices.
@@ -99,6 +99,18 @@ config.keys = {
 	{ key = "d", mods = "ALT", action = act.ScrollByLine(1) },
 	{ key = "u", mods = "ALT|SHIFT", action = act.ScrollByLine(-5) },
 	{ key = "d", mods = "ALT|SHIFT", action = act.ScrollByLine(5) },
+	{
+		key = "q",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.PromptInputLine({
+			description = "Close all tabs and quit WezTerm? (y/n)",
+			action = wezterm.action_callback(function(window, pane, line)
+				if line == "y" or line == "Y" then
+					window:perform_action(wezterm.action.QuitApplication, pane)
+				end
+			end),
+		}),
+	},
 }
 -- Finally, return the configuration to wezterm:
 return config
