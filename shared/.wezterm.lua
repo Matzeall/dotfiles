@@ -102,14 +102,7 @@ config.keys = {
 	{
 		key = "q",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action.PromptInputLine({
-			description = "Close all tabs and quit WezTerm? (y/n)",
-			action = wezterm.action_callback(function(window, pane, line)
-				if line == "y" or line == "Y" then
-					window:perform_action(wezterm.action.QuitApplication, pane)
-				end
-			end),
-		}),
+		action = wezterm.action.QuitApplication,
 	},
 }
 -- Finally, return the configuration to wezterm:
