@@ -1,0 +1,3 @@
+org.wezfurlong.wezterm.desktop
+# fallback: stock Ubuntu terminal
+org.gnome.Ptyxis.desktop

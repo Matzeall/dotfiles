@@ -16,12 +16,17 @@ if wezterm.target_triple:find("windows") then
 	config.launch_menu = launch_menu
 end
 
+config.enable_wayland = false -- wayland support is flaky currently (e.g. on ubuntu 26.04) -> XWayland (test in the future again though)
+
 ----- Appearance ----------------------------------------
 -- This is where you actually apply your config choices.
 config.font = wezterm.font("Iosevka Term Slab")
 config.font_size = 14.0
 
-config.window_decorations = "RESIZE" -- shows just enough so it still can be resized
+-- config.window_decorations = "RESIZE" -- shows just enough so it still can be resized
+config.window_decorations = "TITLE | RESIZE" -- normal window
+-- config.window_decorations = "INTEGRATED_BUTTONS | RESIZE" -- hides the titlebar and puts minimize/maximize/close into the tab bar instead
+
 -- config.window_background_opacity = 0.99
 config.window_padding = {
 	left = "3pt",
@@ -88,7 +93,7 @@ config.colors = {
 config.use_dead_keys = false -- i don't notice the effect, but it sounds important
 config.leader = { key = "Space", mods = "SHIFT" }
 config.keys = {
-	{ key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
+	{ key = "l", mods = "LEADER", action = wezterm.action.ShowLauncher },
 	-- scrolling
 	{ key = "u", mods = "ALT", action = act.ScrollByLine(-1) },
 	{ key = "d", mods = "ALT", action = act.ScrollByLine(1) },
