@@ -104,6 +104,25 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.QuitApplication,
 	},
+	-- move debug overlay
+	{ key = "l", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "d", mods = "LEADER", action = wezterm.action.ShowDebugOverlay },
+
+	-- send modified arrow keys correctly to e.g. nvim
+	{ key = "LeftArrow", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x1b[1;6D") },
+	{ key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x1b[1;6C") },
+	{ key = "UpArrow", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x1b[1;6A") },
+	{ key = "DownArrow", mods = "CTRL|SHIFT", action = wezterm.action.SendString("\x1b[1;6B") },
+	{ key = "LeftArrow", mods = "CTRL|ALT", action = wezterm.action.SendString("\x1b[1;7D") },
+	{ key = "RightArrow", mods = "CTRL|ALT", action = wezterm.action.SendString("\x1b[1;7C") },
+	{ key = "UpArrow", mods = "CTRL|ALT", action = wezterm.action.SendString("\x1b[1;7A") },
+	{ key = "DownArrow", mods = "CTRL|ALT", action = wezterm.action.SendString("\x1b[1;7B") },
+	{ key = "Backspace", mods = "CTRL", action = wezterm.action.SendKey({ key = "w", mods = "CTRL" }) },
+	{ key = "Delete", mods = "CTRL", action = wezterm.action.SendString("\x1b[3;5~") },
+
+	-- Unbind Ctrl+Shift+K from clearing scrollback ( for neovim again :) )
+	{ key = "k", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
 }
+
 -- Finally, return the configuration to wezterm:
 return config
