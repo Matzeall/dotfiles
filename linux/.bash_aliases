@@ -1,4 +1,4 @@
 alias ..='cd ..'
-alias sudoedit='se'
+alias se='sudoedit'
 alias bat='batcat'
 alias lg='lazygit'
