@@ -1,0 +1,37 @@
+# environment shared by login and interactive shells
+# sourced from both .profile and .bashrc
+
+# helpers that don't trash the PATH with duplicates
+path_prepend() {
+  case ":$PATH:" in
+         *":$1:"*) ;;                 # already present, skip
+           *) PATH="$1:$PATH" ;;
+         esac
+}
+path_append() {
+  case ":$PATH:" in
+         *":$1:"*) ;;                 # already present, skip
+           *) PATH="$PATH:$1" ;;
+         esac
+}
+
+#####################################################################
+### Personal ENV Cusomization
+#####################################################################
+
+### env vars ########################
+export EDITOR=nvim
+export VISUAL=nvim
+export MANPAGER='nvim +Man!'
+
+
+### PATH extensions #################
+path_prepend "$HOME/.local/bin"
+
+
+### other sources ####################
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env" # rustup path extensions if installed
+
+
+true # exit status 0 at EOF
+

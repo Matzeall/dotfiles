@@ -13,5 +13,6 @@ ln -sf "$REPO/shared/.wezterm.lua" "$HOME/.wezterm.lua"
 # linux-only
 ln -sf "$REPO/linux/ubuntu-xdg-terminals.list" "$HOME/.config/ubuntu-xdg-terminals.list"
 ln -sf "$REPO/linux/.bashrc" "$HOME/.bashrc"
+ln -sf "$REPO/linux/.bash_env" "$HOME/.bash_env"
 ln -sf "$REPO/linux/.bash_aliases" "$HOME/.bash_aliases"
 ln -sf "$REPO/linux/.profile" "$HOME/.profile"
