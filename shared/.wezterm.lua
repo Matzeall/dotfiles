@@ -16,7 +16,7 @@ if wezterm.target_triple:find("windows") then
 	config.launch_menu = launch_menu
 end
 
-config.enable_wayland = true -- wayland support is flaky currently (e.g. on ubuntu 26.04) -> XWayland (test in the future again though)
+config.enable_wayland = false -- wayland support is flaky currently (e.g. on ubuntu 26.04) -> XWayland (test in the future again though)
 
 ----- Appearance ----------------------------------------
 -- This is where you actually apply your config choices.
