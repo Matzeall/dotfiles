@@ -36,6 +36,7 @@ sudo apt install -y \
   btop \
   lazygit \
   python3 python3-pip python3-venv \
+  wl-clipboard \
   xclip \
   ripgrep \
   flatpak \
@@ -84,7 +85,7 @@ fi
 
 
 section "SUMMARY" ################################################################
-for cmd in batcat ncdu curl btop lazygit xclip rg node npm python3 pip3 flatpak tree-sitter; do
+for cmd in batcat ncdu curl btop lazygit wl-copy wl-paste xclip rg node npm python3 pip3 flatpak tree-sitter; do
   if have "$cmd"; then
     printf '  ok   %s\n' "$cmd"
   else
