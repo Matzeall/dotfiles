@@ -36,6 +36,7 @@ config.window_padding = {
 }
 local border_color = "#333333"
 config.window_frame = {
+	font = wezterm.font({ family = "Iosevka Term Slab", weight = "Regular" }),
 	border_left_width = "1pt",
 	border_right_width = "1pt",
 	border_bottom_height = "0pt",
