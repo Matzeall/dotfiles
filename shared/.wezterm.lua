@@ -16,7 +16,9 @@ if wezterm.target_triple:find("windows") then
 	config.launch_menu = launch_menu
 end
 
+-- wayland fixes & stuff
 config.enable_wayland = false -- wayland support is flaky currently (e.g. on ubuntu 26.04) -> XWayland (test in the future again though)
+config.warn_about_missing_glyphs = false
 
 ----- Appearance ----------------------------------------
 -- This is where you actually apply your config choices.
@@ -36,7 +38,7 @@ config.window_padding = {
 }
 local border_color = "#333333"
 config.window_frame = {
-	font = wezterm.font({ family = "Iosevka Term Slab", weight = "Regular" }),
+	font = wezterm.font({ family = "Iosevka Term Slab", weight = "Bold" }), -- Regular / Bold
 	border_left_width = "1pt",
 	border_right_width = "1pt",
 	border_bottom_height = "0pt",
